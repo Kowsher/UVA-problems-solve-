@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool check(string a,string b)
+{
+    for(int i=0; i<a.length(); i++){
+        if(a[i]!=b[i])return false;
+    }
+    return true;
+}
+int main()
+{
+    string nub[10000];
+    int cas,val;
+    cin>>cas;
+    while(cas--){
+        cin>>val;
+        for(int j=0; j<val; j++){cin>>nub[j];}
+        sort(nub,nub+val);
+        bool flag =true;
+        for(int j=0; j<val-1; j++){
+            if(check(nub[j],nub[j+1])){flag=false; break;}
+        }
+        flag?cout<<"YES"<<endl:cout<<"NO"<<endl;
+
+    }
+
+
+    return 0;
+}
